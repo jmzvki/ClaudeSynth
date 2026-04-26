@@ -1,82 +1,80 @@
 {
-    "identifier": "zvkifa.ClaudeSynth",
-    "name": "ClaudeSynth",
-    "organization": "Zavocki Fine Arts LLC",
-    "description": "AI-powered code synthesis for Nova. Write methods, generate protocols, and explode abstractions — powered by Claude.",
-    "version": "0.1.0",
-    "categories": ["commands"],
+  "identifier": "zvkifa.ClaudeSynth",
+  "name": "ClaudeSynth",
+  "organization": "Zavocki Fine Arts LLC",
+  "description": "AI-powered code synthesis for Nova. Write methods, generate protocols, and explode abstractions — powered by Claude.",
+  "version": "0.1.0",
+  "categories": ["commands"],
 
-    "main": "main.js",
+  "main": "main.js",
 
-    "activationEvents": [
-        "*"
-    ],
+  "activationEvents": ["*"],
 
-    "entitlements": {
-        "requests": true
+  "entitlements": {
+    "requests": true
+  },
+
+  "config": [
+    {
+      "title": "API Key",
+      "key": "claudesynth.apiKey",
+      "type": "string",
+      "placeholder": "sk-ant-...",
+      "description": "Your Anthropic API key. Get one at console.anthropic.com."
     },
-
-    "config": [
-        {
-            "title": "API Key",
-            "key": "claudesynth.apiKey",
-            "type": "string",
-            "placeholder": "sk-ant-...",
-            "description": "Your Anthropic API key. Get one at console.anthropic.com."
-        },
-        {
-            "title": "Model",
-            "key": "claudesynth.model",
-            "type": "enum",
-            "values": [
-                ["claude-opus-4-5", "Claude Opus 4.5 (most capable)"],
-                ["claude-sonnet-4-5", "Claude Sonnet 4.5 (balanced)"],
-                ["claude-haiku-4-5-20251001", "Claude Haiku 4.5 (fast)"]
-            ],
-            "default": "claude-sonnet-4-5"
-        },
-        {
-            "title": "Insert Mode",
-            "key": "claudesynth.insertMode",
-            "type": "enum",
-            "values": [
-                ["replace", "Replace selection / insert at cursor"],
-                ["newDocument", "Open in new document"],
-                ["clipboard", "Copy to clipboard"]
-            ],
-            "default": "replace"
-        }
-    ],
-
-    "commands": {
-        "editor": [
-            {
-                "title": "Write / Implement",
-                "command": "claudesynth.write",
-                "shortcut": "cmd-shift-g",
-                "when": "editorHasFocus"
-            },
-            {
-                "title": "Explode / Abstract",
-                "command": "claudesynth.explode",
-                "shortcut": "cmd-shift-e",
-                "when": "editorHasFocus"
-            },
-            {
-                "separator": true
-            },
-            {
-                "title": "Generate Protocol / Interface",
-                "command": "claudesynth.protocol",
-                "shortcut": "cmd-shift-p",
-                "when": "editorHasFocus"
-            },
-            {
-                "title": "Explain Selection",
-                "command": "claudesynth.explain",
-                "shortcut": "cmd-shift-x",
-                "when": "editorHasFocus"
-            }
-        ]
+    {
+      "title": "Model",
+      "key": "claudesynth.model",
+      "type": "enum",
+      "values": [
+        ["claude-opus-4-5", "Claude Opus 4.5 (most capable)"],
+        ["claude-sonnet-4-5", "Claude Sonnet 4.5 (balanced)"],
+        ["claude-haiku-4-5-20251001", "Claude Haiku 4.5 (fast)"]
+      ],
+      "default": "claude-sonnet-4-5"
+    },
+    {
+      "title": "Insert Mode",
+      "key": "claudesynth.insertMode",
+      "type": "enum",
+      "values": [
+        ["replace", "Replace selection / insert at cursor"],
+        ["newDocument", "Open in new document"],
+        ["clipboard", "Copy to clipboard"]
+      ],
+      "default": "replace"
     }
+  ],
+
+  "commands": {
+    "editor": [
+      {
+        "title": "Write / Implement",
+        "command": "claudesynth.write",
+        "shortcut": "opt-shift-w",
+        "when": "editorHasFocus"
+      },
+      {
+        "title": "Explode / Abstract",
+        "command": "claudesynth.explode",
+        "shortcut": "opt-shift-e",
+        "when": "editorHasFocus"
+      },
+      {
+        "separator": true
+      },
+      {
+        "title": "Generate Protocol / Interface",
+        "command": "claudesynth.protocol",
+        "shortcut": "opt-shift-p",
+        "when": "editorHasFocus"
+      },
+      {
+        "title": "Explain Selection",
+        "command": "claudesynth.explain",
+        "shortcut": "opt-shift-x",
+        "when": "editorHasFocus"
+      }
+    ]
+  }
 }
