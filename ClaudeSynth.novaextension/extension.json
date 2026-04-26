@@ -3,7 +3,7 @@
   "name": "ClaudeSynth",
   "organization": "Zavocki Fine Arts LLC",
   "description": "AI-powered code synthesis for Nova. Write methods, generate protocols, and explode abstractions — powered by Claude.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "categories": ["commands"],
 
   "main": "main.js",
